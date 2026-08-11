@@ -65,3 +65,16 @@ git clone [https://github.com/higarbagexd/2D-Input-Display.git](https://github.c
 cd 2D-Input-Display
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build --config Release
+```
+## Credits
+
+  2D-Input-Display
+ 
+  Copyright (C) 2026 higarbagexd
+ 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+
