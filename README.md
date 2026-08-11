@@ -48,6 +48,7 @@ If you encounter any bugs or have feedback, please open an issue under the **Iss
 - **Multi-Player Overlay Support:** Run multiple overlays simultaneously with colored player indicators (e.g., Red dot for P1, Blue dot for P2) that can be toggled in settings.
 - **Dynamic Controller Chooser:** Auto-detect connected gamepads and select/reassign which physical device controls which player slot.
 - **OBS / Recording Mode:** Hide the desktop overlay from your screen while keeping it active as a clean source inside OBS or recording software.
+- Comments and Code Documentation. This is what I will focus on the most before creating anything else. I will create documentation for all classes and comments.
 
 ---
 
