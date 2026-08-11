@@ -35,9 +35,10 @@ If you encounter any bugs or have feedback, please open an issue under the **Iss
 ## Getting Started
 
 ### Download for Windows
-1. Go to the **Releases** section on this GitHub page.
-2. Download the latest `InputOverlay-v0.1.0-beta.zip` archive.
-3. Extract the `.zip` folder and run `appInputOverlay.exe`.
+1. Download `InputOverlay-v0.1.0-beta.zip` from the [Latest Release](https://github.com/higarbagexd/2D-Input-Display/releases/latest) page.
+2. Extract the `.zip` folder and run `appInputOverlay.exe`.
+
+   - This app will not work on Linux and MacOS. I will attempt to add support for them later on.
 
 ---
 
