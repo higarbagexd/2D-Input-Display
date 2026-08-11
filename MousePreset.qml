@@ -14,6 +14,13 @@ Item {
     property bool upperPressed: MouseBridge.effectiveUpperPressed
     property bool lowerPressed: MouseBridge.effectiveLowerPressed
 
+    // Live movement values from MouseBridge (used by the dot/ring below).
+    // dotX/dotY are an offset from center that grows as the mouse moves and
+    // decays back toward 0 when it stops, clamped to +/- maxRadius.
+    property real liveDotX: MouseBridge.dotX
+    property real liveDotY: MouseBridge.dotY
+    property real liveMaxRadius: MouseBridge.maxRadius
+
     Rectangle {
         anchors.fill: parent
         color: "transparent"
@@ -687,6 +694,57 @@ Item {
                     PathLine { x: 61.0; y: 391.0 }
                     PathLine { x: 55.0; y: 391.0 }
                     PathLine { x: 53.0; y: 391.0 }
+                }
+            }
+
+            // 7. Movement Indicator — ring + dot showing live mouse movement
+            // (this is a real circle, not a hand-traced path like the shapes above,
+            // so it's just a Rectangle with radius = half its width/height)
+            Item {
+                id: movementIndicator
+                anchors.fill: parent
+                z: 3
+
+                // Where the ring/dot sit, in the same 424x598 coordinate space
+                // used by all the paths above. Placed low in the body, clear of
+                // every button shape (buttons only go down to about y:265).
+                property real centerX: 222.0
+                property real centerY: 420.0
+
+                // How big the ring is drawn. Kept smaller than the body's edges
+                // at this height so there's visible margin all the way around.
+                property real ringRadius: 70.0
+
+                // Turn MouseBridge's raw offset into a position inside the ring.
+                // MouseBridge clamps dotX/dotY to +/- maxRadius, so dividing by
+                // maxRadius and multiplying by ringRadius means the dot always
+                // lands inside the ring, and just touches the edge at max offset.
+                property real dotOffsetX: liveMaxRadius > 0 ? (liveDotX / liveMaxRadius) * ringRadius : 0
+                property real dotOffsetY: liveMaxRadius > 0 ? (liveDotY / liveMaxRadius) * ringRadius : 0
+
+                // The ring itself: white outline, transparent inside, centered on centerX/centerY
+                Rectangle {
+                    width: movementIndicator.ringRadius * 2
+                    height: movementIndicator.ringRadius * 2
+                    radius: width / 2
+                    color: "transparent"
+                    border.color: "white"
+                    border.width: 2.5
+                    antialiasing: true
+                    x: movementIndicator.centerX - width / 2
+                    y: movementIndicator.centerY - height / 2
+                }
+
+                // The dot: small solid white circle, starts at center and slides
+                // around inside the ring as dotOffsetX/dotOffsetY change
+                Rectangle {
+                    width: 14
+                    height: 14
+                    radius: width / 2
+                    color: "white"
+                    antialiasing: true
+                    x: movementIndicator.centerX + movementIndicator.dotOffsetX - width / 2
+                    y: movementIndicator.centerY + movementIndicator.dotOffsetY - height / 2
                 }
             }
         }
