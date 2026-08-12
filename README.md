@@ -1,6 +1,5 @@
 # 2D Input Display (Beta)
 
-A lightweight, low-latency visual overlay and input remapping tool for gamepads, keyboards, and mice built with C++ and Qt/QML.
 
 ---
 
