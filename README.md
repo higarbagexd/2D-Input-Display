@@ -6,7 +6,8 @@
 ## Features
 
 - **Real Time Input Display:** Have an overlay for controller buttons, analog sticks, keyboard keys, and mouse movements/buttons live on screen.
-- **Input Mapping & Remapping:** Remap controller buttons to other actions, map keyboard keys to controller inputs, or rebind inputs vice versa. (It is worth noting that input remapping isn't something you would have to use if you're using the native hardware. Meaning, if you just want to have a keyboard/controller overlay, you might not need to use the input remapping feature at all. If you have a controller that isn't an Xbox controller you might need to remap the face buttons, but that should be all.)
+- **Input Mapping & Remapping:** Remap controller buttons to other actions, map keyboard keys to controller inputs, or rebind inputs vice versa.
+- (It is worth noting that input remapping isn't something you would have to use if you're using the native hardware. Meaning, if you just want to have a keyboard/controller overlay, you might not need to use the input remapping feature at all. If you have a controller that isn't an Xbox controller you might need to remap the face buttons, but that should be all.)
 - **Multiple Preset Layouts:** Switch between different built-in overlay presets.
 - **Customizable Overlay Window:** Frameless, transparent window that stays on top, with adjustable background visibility, custom title bar, and dynamic scaling.
 - **Automatic Update Notifications:** Built-in checker that detects when a new release is available on GitHub and lets you jump straight to the download page.
